@@ -1,20 +1,13 @@
-(ns gerenciadorDeDataShow.core
-  (:gen-class)
-  (:require 
-   [gerenciadorDeDataShow.view.view :as view]
-   [gerenciadorDeDataShow.database.connection :as DB-connection]))
+(ns gerenciadorDeDataShow.core)
 
+; integrantes: Uaná, Fernando, Alvaro, Malu, Laura, Guilherme, Otavio
 
-(defn greet
-  "I don't do a whole lot ... yet."
-  [& args]
-  (DB-connection/init-db)
-  (loop []
-    (view/show-menu)
-    (let [choice (read-line)]
-      (if (= choice "11")
-        ((view/log "Programa encerrado.")
-         (System/exit 0))
-        (do
-          (view/handle-input choice)
-          (recur))))))
+; Guilherme
+; main -> receber input, fazer requests pro crud e imprimir responses (assincrono) 
+
+; Fernando 
+; imprimirMenu -> imprime o menu
+
+; Alvaro
+; imprimirResultado ([]datashows) -> imprime o resultado de uma operacao
+
