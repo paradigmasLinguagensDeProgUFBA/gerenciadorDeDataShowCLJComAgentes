@@ -2,6 +2,7 @@
 
 ; Fernando
 ; datashow -> definição de datashow (id, horario)
+(defrecord Datashow [id horario])
 
 ; Otavio
 ; listaDeDatashows -> definição de lista de datashows (datashows)

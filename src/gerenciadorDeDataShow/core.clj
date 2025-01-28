@@ -8,6 +8,19 @@
 
 ; Fernando 
 ; imprimirMenu -> imprime o menu
+(defn receber-input []
+  (println "========== MENU ==========")
+  (println "1. Listar Datashows")
+  (println "2. Alocar Datashow")
+  (println "3. Desalocar Datashow")
+  (println "4. Criar Datashow")
+  (println "5. Deletar Datashow")
+  (println "6. Realocar Datashow")
+  (println "0. Sair")
+  (print "Escolha uma opção: ")
+  (flush)
+  (read-line))
+
 
 ; Alvaro
 ; imprimirResultado ([]datashows) -> imprime o resultado de uma operacao
