@@ -5,7 +5,7 @@
 ; criar (id) -> cria um novo datashow com horario "indefinido"
 ; Vou assumir que tem um agente para a lista chamado ListaDeDatashows
 (defn criar [id]
-  (send-off ListaDeDatashows (conj ListaDeDatashows {:id id :horario "indefinido"})))
+  (send-off ListaDeDatashows conj {:id id :horario "indefinido"}))
 
 ; Alvaro
 ; alocar (id, horario) -> aloca datashow(id) a um horario
@@ -23,6 +23,6 @@
 ; listar () -> lista todos os datashows
 (defn listar []
   (await ListaDeDatashows)
-  (@ListaDeDatashows))
+  (deref ListaDeDatashows))
 
 
