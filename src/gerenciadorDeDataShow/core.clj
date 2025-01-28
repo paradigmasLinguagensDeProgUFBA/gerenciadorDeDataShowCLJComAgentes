@@ -1,4 +1,5 @@
-(ns gerenciadorDeDataShow.core)
+(ns gerenciadorDeDataShow.core
+  (:require [gerenciadorDeDataShow.crud :as crud])
 
 ; integrantes: Uaná, Fernando, Alvaro, Malu, Laura, Guilherme, Otavio
 
@@ -25,31 +26,31 @@
 
   (defn executar-opcao [opcao]
   (case opcao
-    "1" (crud/listar-datashows) ;; Request para listar datashows
+    "1" (imprimir-resultado (crud/listar)) ;; Request para listar datashows
 
     "2" (do
           (print "ID do Datashow: ") (flush)
           (let [id (Integer/parseInt (read-line))]
             (print "Horário da alocação do Datashow: ") (flush)
             (let [horario (read-line)]
-              (crud/alocar-datashow id horario)))) ;; Request para alocar
+              (crud/alocar id horario)))) ;; Request para alocar
 
     "3" (do
           (print "ID do Datashow: ") (flush)
           (let [id (Integer/parseInt (read-line))]
             (print "Horário da desalocação do Datashow: ") (flush)
             (let [horario (read-line)]
-              (crud/desalocar-datashow id horario)))) ;; Request para desalocar
+              (crud/desalocar id horario)))) ;; Request para desalocar
 
     "4" (do
           (print "ID do novo Datashow: ") (flush)
           (let [id (Integer/parseInt (read-line))]
-              (crud/criar-datashow id horario)))) ;; Request para criar
+              (crud/criar id)))) ;; Request para criar
 
     "5" (do
           (print "ID do Datashow para deletar: ") (flush)
           (let [id (Integer/parseInt (read-line))]
-            (crud/deletar-datashow id))) ;; Request para deletar
+            (crud/deletar id))) ;; Request para deletar
 
     "6" (do
           (print "ID do Datashow a ser realocado: ") (flush)
