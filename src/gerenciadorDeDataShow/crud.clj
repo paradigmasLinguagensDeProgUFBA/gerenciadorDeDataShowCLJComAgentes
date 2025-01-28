@@ -18,7 +18,10 @@
 
 ; Laura
 ; deletar (id) -> deleta datashow(id)
-
+(defn deletar [id]
+  (send-off ListaDeDatashows
+            (fn [datashows]
+              (remove #(= (:id %) id) datashows)))) 
 ; Uaná
 ; listar () -> lista todos os datashows
 (defn listar []
