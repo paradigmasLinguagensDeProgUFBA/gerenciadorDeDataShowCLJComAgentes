@@ -1,5 +1,5 @@
 (ns gerenciadorDeDataShow.core
-  (:require [gerenciadorDeDataShow.crud :as crud])
+  (:require [gerenciadorDeDataShow.crud :as crud]))
 
 ; integrantes: Uaná, Fernando, Alvaro, Malu, Laura, Guilherme, Otavio
 
@@ -58,7 +58,7 @@
     "4" (do
           (print "ID do novo Datashow: ") (flush)
           (let [id (Integer/parseInt (read-line))]
-              (crud/criar id)))) ;; Request para criar
+              (crud/criar id))) ;; Request para criar
 
     "5" (do
           (print "ID do Datashow para deletar: ") (flush)
@@ -86,4 +86,4 @@
     (let [opcao (receber-input)] 
       (executar-opcao opcao)     
       (imprimir-resposta opcao) 
-      (recur))))                
+      (recur))))     
