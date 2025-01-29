@@ -23,7 +23,7 @@
 
 
 ; Alvaro
-; imprimirResultado ([]datashows) -> imprime o resultado de uma operacao
+; imprimirResultado ([]datas   hows) -> imprime o resultado de uma operacao
 
 
 
