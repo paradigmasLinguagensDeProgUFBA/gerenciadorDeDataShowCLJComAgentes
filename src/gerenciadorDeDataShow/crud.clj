@@ -26,9 +26,31 @@
 
 ; Malu
 ; desalocar (id) -> desaloca datashow(id)
+(defn desalocar [id]
+  (let [ds (datashow/puxar-datashow id)]
+    (if (nil? ds)
+      (println "Datashow não encontrado")
+      (send-off datashow/ListaDeDatashows
+                #(mapv (fn [datashow]
+                         (if (= (:id datashow) id)
+                           (assoc datashow :horario "indefinido")
+                           datashow))
+                       %)))))
+
 
 ; Malu
 ; realocar (id, horario) -> realoca datashow(id) para um novo horario
+(defn realocar [id novo-horario]
+  (let [ds (datashow/puxar-datashow id)]
+    (if (nil? ds)
+      (println "Datashow não encontrado")
+      (send-off datashow/ListaDeDatashows
+                #(mapv (fn [datashow]
+                         (if (= (:id datashow) id)
+                           (assoc datashow :horario novo-horario)
+                           datashow))
+                       %)))))
+
 
 ; Laura
 ; deletar (id) -> deleta datashow(id)
