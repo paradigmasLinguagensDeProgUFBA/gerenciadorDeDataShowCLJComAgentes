@@ -1,13 +1,7 @@
 (ns gerenciadorDeDataShow.core
   (:require [gerenciadorDeDataShow.crud :as crud]))
 
-; integrantes: Uaná, Fernando, Alvaro, Malu, Laura, Guilherme, Otavio
 
-; Guilherme
-; main -> receber input, fazer requests pro crud e imprimir responses (assincrono) 
-
-; Fernando 
-; imprimirMenu -> imprime o menu
 (defn receber-input []
   (println "========== MENU ==========")
   (println "1. Listar Datashows")
@@ -22,18 +16,11 @@
   (read-line))
 
 
-; Alvaro
-; imprimirResultado ([]datashows) -> imprime o resultado de uma operacao
 (defn imprimirResultado [resultado]
   (if (empty? resultado)
     (println "Nenhum datashow encontrado.")
     (doseq [ds resultado]
       (println ds))))
-
-
-;;;;;;;;;;;;;;;;;;;;
-; AREA DO MENU
-;;;;;;;;;;;;;;;;;;;;
 
 
 (defn receber-input []
@@ -79,10 +66,6 @@
     "0" (System/exit 0) ;; Sair
     (println "Opção inválida.")))
 
-
-;;;;;;;;;;;;;;;;;;;;
-; AREA DO IMPRIMIR-RESPOSTA
-;;;;;;;;;;;;;;;;;;;;
 
 
 (defn -main []
