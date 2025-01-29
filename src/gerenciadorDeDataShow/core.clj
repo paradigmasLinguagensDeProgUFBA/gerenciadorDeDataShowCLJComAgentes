@@ -24,7 +24,11 @@
 
 ; Alvaro
 ; imprimirResultado ([]datashows) -> imprime o resultado de uma operacao
-
+(defn imprimirResultado [resultado]
+  (if (empty? resultado)
+    (println "Nenhum datashow encontrado.")
+    (doseq [ds resultado]
+      (println ds))))
 
 
 ;;;;;;;;;;;;;;;;;;;;
